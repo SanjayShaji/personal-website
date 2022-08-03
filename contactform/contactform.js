@@ -45,11 +45,12 @@ var ErrorSubmit=document.getElementById('ErrorSubmit');
 function validatename(){
     
     var vname=document.getElementById('name').value;
-    
-    if(vname.length == 0){
-        ErrorName.innerHTML='Name is required';
-        ErrorName.style.color = "red";
+    var required=4;
+    var left=required-vname.length;
 
+    if(left>0){
+        ErrorName.innerHTML=left+'More Charecters required';
+        ErrorName.style.color = "red";
         return false;
     }    
     // if(!vname.match(/^[A-Za-z]\s{1}[A-Za-z]$/)){
